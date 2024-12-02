@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <h2>Checkout</h2>
+
+    <div id="checkout-details">
+        <h3>Your Order</h3>
+        <ul id="cart-review"></ul>
+
+        <h3>Shipping Information</h3>
+        <form id="shipping-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Shipping Address</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="payment">Payment Information</label>
+            <input type="text" id="payment" name="payment" required>
+
+            <button type="submit">Confirm Order</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartReviewElement = document.getElementById('cart-review');
+            
+            if (cart.length === 0) {
+                cartReviewElement.innerHTML = '<li>Your cart is empty.</li>';
+            } else {
+                cart.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+                    cartReviewElement.appendChild(listItem);
+                });
+            }
+        });
+
+        document.getElementById('shipping-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            alert('Order confirmed! Thank you for shopping with us.');
+            localStorage.removeItem('cart');
+            window.location.href = 'thankyou.html';
+        });
+    </script>
+</body>
+</html>

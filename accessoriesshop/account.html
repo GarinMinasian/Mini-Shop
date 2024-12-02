@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="account-container">
+    <div id="welcome-message" style="display: none;">
+      <h1>Welcome, <span id="user-name"></span>!</h1>
+      <button id="logout-button">Logout</button>
+      <button id="home-button">Back to Home</button>
+    </div> 
+    <div id="signup-container">
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="email" required><br><br>
+
+        <label for="signup-first-name">First Name:</label>
+        <input type="text" id="signup-first-name" name="first-name" required><br><br>
+
+        <label for="signup-last-name">Last Name:</label>
+        <input type="text" id="signup-last-name" name="last-name" required><br><br>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required><br><br>
+
+        <label for="signup-confirm-password">Confirm Password:</label>
+        <input type="password" id="signup-confirm-password" name="confirm-password" required><br><br>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <div id="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="email" required><br><br>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password" required><br><br>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="account.js"></script>
+</body>
+</html>  

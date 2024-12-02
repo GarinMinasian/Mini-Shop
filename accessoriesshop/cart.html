@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <h2>Your Cart</h2>
+    <div id="mini-cart" class="mini-cart-box">
+        <ul id="cart"></ul>
+    </div>
+    
+    <button id="checkout-btn">Checkout</button>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const cartElement = document.getElementById('cart');
+            const checkoutButton = document.getElementById('checkout-btn');
+
+            if (cart.length === 0) {
+                const emptyMessage = document.createElement('li');
+                emptyMessage.textContent = 'Your cart is empty.';
+                cartElement.appendChild(emptyMessage);
+                checkoutButton.disabled = true; // Disable checkout button if cart is empty
+            } else {
+                cart.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+                    cartElement.appendChild(listItem);
+                });
+                checkoutButton.disabled = false; // Enable checkout button if there are items
+            }
+
+            checkoutButton.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert("Your cart is empty. Please add items to your cart before checking out.");
+                } else {
+                    window.location.href = "checkout.html"; // Redirect to checkout page
+                }
+            });
+        });
+    </script>
+</body>
+</html>

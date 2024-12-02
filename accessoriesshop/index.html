@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+        <li> <a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li> <a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li> <a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+
+    <div class="category-row">
+        <a href="rings.html">
+            <div class="category-box">
+                <img src="ring.jpg" alt="Rings">
+            </div>
+        </a>
+        <a href="earings.html">
+            <div class="category-box">
+                <img src="earing.jpg" alt="Earrings">
+            </div>
+        </a>
+        <a href="necklace.html">
+            <div class="category-box">
+                <img src="necklace.jpg" alt="Necklaces">
+            </div>
+        </a>
+    </div>
+
+
+    <h2>All Products</h2>
+    <div class="product-row">
+        <div class="product-box" data-id="1" data-name="Vivienne Westwood Earring" data-price="30">
+            <img src="prod1.jpg" alt="Product">
+            <p>30$</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-box" data-id="2" data-name="Vivienne Westwood Necklace" data-price="50">
+            <img src="prod2.jpg" alt="Product">
+            <p>50$</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+
+        <div class="product-box" data-id="3" data-name="Vivienne Westwood Ring" data-price="25">
+            <img src="prod3.jpg" alt="Product">
+            <p>25$</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+
+    </div>
+ 
+    <h3>Your Cart</h3>
+    <div id="mini-cart" class="mini-cart-box">
+        <ul id="cart"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
